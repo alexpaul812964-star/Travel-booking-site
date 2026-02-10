@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkySaver Airlines | Flash Sale</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #e63946;
+      --secondary: #1d3557;
+      --accent: #f4a261;
+      --bg: #f8f9fb;
+      --text: #333;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--white);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    nav a:focus,
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      padding: 4rem 5%;
+      gap: 2rem;
+      background: linear-gradient(135deg, #1d3557, #457b9d);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.9rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover,
+    .cta-btn:focus {
+      background: #c71f2d;
+    }
+
+    /* ===== COUNTDOWN STYLE (visual only) ===== */
+    .countdown {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.15);
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius);
+      text-align: center;
+      min-width: 70px;
+    }
+
+    .time-box strong {
+      font-size: 1.2rem;
+      display: block;
+    }
+
+    /* ===== DEALS SECTION ===== */
+    .deals {
+      padding: 4rem 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--secondary);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-content {
+      padding: 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .route {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin: 0.6rem 0;
+    }
+
+    .book-btn {
+      background: var(--secondary);
+      color: white;
+      padding: 0.7rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 0.7rem;
+    }
+
+    .book-btn:hover,
+    .book-btn:focus {
+      background: #14253d;
+    }
+
+    /* ===== WHY SECTION ===== */
+    .features {
+      padding: 4rem 5%;
+      background: #fff;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      background: var(--bg);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .feature h3 {
+      margin-bottom: 0.6rem;
+      color: var(--secondary);
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter {
+      padding: 4rem 5%;
+      text-align: center;
+      background: linear-gradient(135deg,#e63946,#f4a261);
+      color: white;
+    }
+
+    .newsletter form {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .newsletter input {
+      padding: 0.8rem;
+      border-radius: 30px;
+      border: none;
+      min-width: 250px;
+    }
+
+    .newsletter button {
+      padding: 0.8rem 1.2rem;
+      border-radius: 30px;
+      border: none;
+      background: var(--secondary);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE NAV ===== */
+    @media (max-width: 700px) {
+      nav ul {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" aria-label="SkySaver Airlines">✈ SkySaver</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#deals">Deals</a></li>
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#subscribe">Alerts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" aria-labelledby="flash-sale">
+      <div>
+        <h1 id="flash-sale">48‑Hour Flash Sale ✈</h1>
+        <p>Grab ultra‑low fares across domestic and international routes. Limited seats. Book now before prices disappear.</p>
+
+        <div class="countdown" aria-label="Sale ends soon">
+          <div class="time-box"><strong>02</strong>Days</div>
+          <div class="time-box"><strong>14</strong>Hrs</div>
+          <div class="time-box"><strong>22</strong>Min</div>
+        </div>
+
+        <a href="#deals" class="cta-btn">View Flash Deals</a>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1200" alt="Airplane flying above clouds during sunset">
+      </div>
+    </section>
+
+    <!-- DEALS -->
+    <section class="deals" id="deals" aria-labelledby="deal-heading">
+      <div class="section-title">
+        <h2 id="deal-heading">Top Flash Sale Routes</h2>
+        <p>Book within the next 48 hours to unlock these prices.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=800" alt="Dubai skyline">
+          <div class="card-content">
+            <div>
+              <div class="route">Kochi → Dubai</div>
+              <div class="price">₹7,999</div>
+              <p>Non‑stop • Limited seats</p>
+            </div>
+            <a href="#" class="book-btn" aria-label="Book Kochi to Dubai">Book Now</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800" alt="Singapore skyline">
+          <div class="card-content">
+            <div>
+              <div class="route">Trivandrum → Singapore</div>
+              <div class="price">₹10,499</div>
+              <p>Hot deal • Weekend special</p>
+            </div>
+            <a href="#" class="book-btn">Book Now</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800" alt="Mumbai city skyline">
+          <div class="card-content">
+            <div>
+              <div class="route">Kochi → Mumbai</div>
+              <div class="price">₹3,299</div>
+              <p>Fastest selling route</p>
+            </div>
+            <a href="#" class="book-btn">Book Now</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features" aria-labelledby="why-heading">
+      <div class="section-title">
+        <h2 id="why-heading">Why Fly SkySaver?</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Low Fares</h3>
+          <p>Unbeatable flash deals and everyday budget pricing.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Easy Booking</h3>
+          <p>Simple and fast booking experience with zero hassle.</p>
+        </div>
+
+        <div class="feature">
+          <h3>On‑Time Flights</h3>
+          <p>Reliable departures and arrivals you can trust.</p>
+        </div>
+
+        <div class="feature">
+          <h3>24/7 Support</h3>
+          <p>Customer care always ready to help your journey.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter" id="subscribe" aria-labelledby="subscribe-heading">
+      <h2 id="subscribe-heading">Get Flash Sale Alerts</h2>
+      <p>Subscribe to never miss exclusive flight deals.</p>
+
+      <form>
+        <label for="email" class="visually-hidden">Email address</label>
+        <input id="email" type="email" placeholder="Enter your email" required aria-required="true">
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 SkySaver Airlines • Flash sale ends soon • Terms apply</p>
+  </footer>
+</body>
+</html>
